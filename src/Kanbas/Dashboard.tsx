@@ -6,7 +6,7 @@ export default function Dashboard() {
       <h2 id="wd-dashboard-published">Published Courses (12)</h2> <hr />
       <div id="wd-dashboard-courses">
         <div className="wd-dashboard-course">
-          <img src="/images/reactjs.jpg"  alt='reactjs' width={200} />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"  alt='reactjs' width={100} height={100} />
           <div>
             <Link className="wd-dashboard-course-link"
               to="/Kanbas/Courses/1234/Home">
@@ -18,8 +18,21 @@ export default function Dashboard() {
             <Link to="/Kanbas/Courses/1234/Home"> Go </Link>
           </div>
         </div>
-        <div className="wd-dashboard-course"> ... </div>
-        <div className="wd-dashboard-course"> ... </div>
+        <div className="wd-dashboard-course"> 
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"  alt='nodejs' width={100} height={100} />
+          <div>
+            <Link className="wd-dashboard-course-link"
+              to="/Kanbas/Courses/1234/Home">
+              CS1235 Node JS
+            </Link>
+            <p className="wd-dashboard-course-title">
+              Backend developer
+            </p>
+            <Link to="/Kanbas/Courses/1234/Home"> Go </Link>
+          </div>
+          
+           </div>
+        <div className="wd-dashboard-course">  </div>
       </div>
     </div>
   );
