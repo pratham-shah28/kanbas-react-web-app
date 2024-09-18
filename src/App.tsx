@@ -32,6 +32,7 @@ export default function App() {
   return (
     <HashRouter>
       <div>
+        
         <Routes>
           <Route path="/" element={<Navigate to="Labs" />} />
           <Route path="/Labs/*" element={<Labs />} />

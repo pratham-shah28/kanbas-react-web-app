@@ -30,7 +30,6 @@ export default function Dashboard() {
             </p>
             <Link to="/Kanbas/Courses/1234/Home"> Go </Link>
           </div>
-          
            </div>
         <div className="wd-dashboard-course">  </div>
       </div>

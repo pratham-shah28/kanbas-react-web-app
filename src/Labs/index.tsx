@@ -6,6 +6,10 @@ import Lab3 from "./Lab3";
 export default function Labs() {
   return (
     <div>
+      <h1>
+        Pratham Sachinbhai Shah <br />
+        CS5610.20595.202510
+        </h1>
       <h1>Labs</h1>
       <TOC />
       <Routes>
