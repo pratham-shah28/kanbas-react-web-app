@@ -1,5 +1,17 @@
 import "./index.css"
 import ForegroundColors from "./ForegroundColors";
+import BackgroundColors from "./BackgroundColors";
+import Borders from "./Borders";
+import Padding from "./Padding";
+import Corners from "./Corners";
+import Dimension from "./Dimensions";
+import Positions from "./Positions";
+import Zindex from "./Zindex";
+import Float from "./Float";
+import GridLayout from "./GridLayout";
+import Flex from "./Flex";
+import ReactIconsSampler from "./ReactIcons";
+
 export default function Lab2() {
     return (
       <div id="wd-lab2">
@@ -46,6 +58,17 @@ This heading has same style as paragraph above
   </div>
 </div>
 <ForegroundColors/>
+<BackgroundColors/>
+<Borders/>
+<Padding/>
+<Corners/>
+<Dimension/>
+<Positions/>
+<Zindex/>
+<Float/>
+<GridLayout/>
+<Flex/>
+<ReactIconsSampler/>
     </div>
     
 
