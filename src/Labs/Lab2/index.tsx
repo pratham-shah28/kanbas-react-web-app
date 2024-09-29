@@ -11,10 +11,13 @@ import Float from "./Float";
 import GridLayout from "./GridLayout";
 import Flex from "./Flex";
 import ReactIconsSampler from "./ReactIcons";
+import BootstrapGirds from "./BootstrapGrids";
+import ScreenSizeLabel from "./ScreenSizeLabel";
+import BootstrapTables from "./BootstrapTables";
 
 export default function Lab2() {
     return (
-      <div id="wd-lab2">
+      <div  className="container">
       <h2>Lab 2 - Cascading Style Sheets</h2>
       <h3>Styling with the STYLE attribute</h3>
       <div id="wd-css-id-selectors">
@@ -69,9 +72,10 @@ This heading has same style as paragraph above
 <GridLayout/>
 <Flex/>
 <ReactIconsSampler/>
+<BootstrapGirds/>
+<ScreenSizeLabel/>
+<BootstrapTables/>
     </div>
-    
-
     );
   }
   
