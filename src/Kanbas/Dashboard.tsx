@@ -12,7 +12,7 @@ export default function Dashboard() {
                 className="wd-dashboard-course-link text-decoration-none text-dark"
                 to="/Kanbas/Courses/1234/Home"
               >
-                <img src="/images/reactjs.png" alt="React JS course image" width="100%" height={160} />
+                <img src="/images/reactjs.png" alt="React JS course " width="100%" height={160} />
                 <div className="card-body">
                   <h5 className="wd-dashboard-course-title card-title">
                     CS1234 React JS
@@ -32,7 +32,7 @@ export default function Dashboard() {
                 className="wd-dashboard-course-link text-decoration-none text-dark"
                 to="/Kanbas/Courses/5678/Home"
               >
-                <img src="/images/reactjs.png" alt="Angular course image" width="100%" height={160} />
+                <img src="/images/reactjs.png" alt="Angular course " width="100%" height={160} />
                 <div className="card-body">
                   <h5 className="wd-dashboard-course-title card-title">
                     CS5678 Angular
@@ -52,7 +52,7 @@ export default function Dashboard() {
                 className="wd-dashboard-course-link text-decoration-none text-dark"
                 to="/Kanbas/Courses/91011/Home"
               >
-                <img src="/images/reactjs.png" alt="Node.js course image" width="100%" height={160} />
+                <img src="/images/reactjs.png" alt="Node.js course " width="100%" height={160} />
                 <div className="card-body">
                   <h5 className="wd-dashboard-course-title card-title">
                     CS91011 Node.js
@@ -72,7 +72,7 @@ export default function Dashboard() {
                 className="wd-dashboard-course-link text-decoration-none text-dark"
                 to="/Kanbas/Courses/1213/Home"
               >
-                <img src="/images/reactjs.png" alt="Python course image" width="100%" height={160} />
+                <img src="/images/reactjs.png" alt="Python course " width="100%" height={160} />
                 <div className="card-body">
                   <h5 className="wd-dashboard-course-title card-title">
                     CS1213 Python
@@ -92,7 +92,7 @@ export default function Dashboard() {
                 className="wd-dashboard-course-link text-decoration-none text-dark"
                 to="/Kanbas/Courses/1415/Home"
               >
-                <img src="/images/reactjs.png" alt="Java course image" width="100%" height={160} />
+                <img src="/images/reactjs.png" alt="Java course " width="100%" height={160} />
                 <div className="card-body">
                   <h5 className="wd-dashboard-course-title card-title">
                     CS1415 Java
@@ -112,7 +112,7 @@ export default function Dashboard() {
                 className="wd-dashboard-course-link text-decoration-none text-dark"
                 to="/Kanbas/Courses/1617/Home"
               >
-                <img src="/images/reactjs.png" alt="AWS course image" width="100%" height={160} />
+                <img src="/images/reactjs.png" alt="AWS course " width="100%" height={160} />
                 <div className="card-body">
                   <h5 className="wd-dashboard-course-title card-title">
                     CS1617 AWS
@@ -132,7 +132,7 @@ export default function Dashboard() {
                 className="wd-dashboard-course-link text-decoration-none text-dark"
                 to="/Kanbas/Courses/1819/Home"
               >
-                <img src="/images/reactjs.png" alt="Machine Learning course image" width="100%" height={160} />
+                <img src="/images/reactjs.png" alt="Machine Learning course " width="100%" height={160} />
                 <div className="card-body">
                   <h5 className="wd-dashboard-course-title card-title">
                     CS1819 Machine Learning
