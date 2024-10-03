@@ -1,11 +1,11 @@
 import CoursesNavigation from "./Navigation";
 import Modules from "./Modules";
-// import Home from "./Home";
+import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import { Navigate, Route, Routes } from "react-router";
 import { FaAlignJustify } from "react-icons/fa";
-
+import PeopleTable from "./People/Table";
 export default function Courses() {
   return (
     <div id="wd-courses">
@@ -21,11 +21,11 @@ export default function Courses() {
             <div className="flex-fill">
             <Routes>
               <Route path="/" element={<Navigate to="Home" />} />
-              <Route path="Home" element={<h2>Home</h2>} />
+              <Route path="Home" element={<Home/>} />
               <Route path="Modules" element={<Modules/>} />
               <Route path="Assignments" element={<h2><Assignments/></h2>} />
               <Route path="Assignments/:aid" element={<h2><AssignmentEditor/></h2>} />
-              <Route path="People" element={<h2>People</h2>} />
+              <Route path="People" element={<PeopleTable />} />
             </Routes>
             </div></div>
     </div>

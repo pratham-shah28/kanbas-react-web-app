@@ -1,0 +1,50 @@
+#wd-assignments {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #wd-search-assignment {
+    max-width: 300px;
+  }
+  
+  #wd-add-assignment-group, #wd-add-assignment {
+    margin-left: 10px;
+  }
+  
+  .list-group-item {
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .list-group-item:last-child {
+    border-bottom: none;
+  }
+  
+  .badge-pill {
+    font-size: 0.9rem;
+  }
+  .text-muted-1 {
+    color: #f21a1a;
+  }
+  #wd-40-btn {
+    border-radius: 30px;
+    background-color: #6c757d00;
+    border-color: #000000;
+    margin-right: 10px;
+  }
+  .border-green{
+    border-left:4px solid green;
+  }
+  
+  #wd-assignments-editor {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  textarea#wd-description {
+    height: 200px;
+  }
