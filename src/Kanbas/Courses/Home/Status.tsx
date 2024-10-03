@@ -6,7 +6,6 @@ import { VscGraph } from "react-icons/vsc";
 import { LiaFileImportSolid } from "react-icons/lia";
 import { MdOutlineAnnouncement } from "react-icons/md";
 import { MdNotificationsActive } from "react-icons/md";
-{/* Find more icons */}
 export default function CourseStatus() {
   return (
     <div id="wd-course-status" style={{ width: "300px" }}>
@@ -36,7 +35,6 @@ export default function CourseStatus() {
         <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
         <MdNotificationsActive className="me-2 fs-5" /> View Course Notifications </button>
         
-      {/* Complete the rest of the buttons */}
     </div>
 );}
 
