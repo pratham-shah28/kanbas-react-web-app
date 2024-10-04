@@ -61,8 +61,8 @@ export default function Assignments() {
                     A1
                   </a>
                   <br />
-                  <span className="text-danger">Multiple Modules</span> | Not available until May 6 at 12:00am |
-                  <br /> Due May 13 at 11:59pm | 100 pts
+                  <span className="text-danger">Multiple Modules</span> | Not available until May 23 at 12:00am |
+                  <br /> Due March 28 at 11:59pm | 100 pts
                 </div>
                 <LessonControlButtons />
               </li>
@@ -74,8 +74,8 @@ export default function Assignments() {
                     A2
                   </a>
                   <br />
-                  <span className="text-danger">Multiple Modules</span> | Not available until May 13 at 12:00am |
-                  <br /> Due May 20 at 11:59pm | 100 pts
+                  <span className="text-danger">Multiple Modules</span> | Not available until April 13 at 12:00am |
+                  <br /> Due April 20 at 11:59pm | 100 pts
                 </div>
                 <LessonControlButtons />
               </li>
