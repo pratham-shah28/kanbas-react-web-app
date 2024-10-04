@@ -35,7 +35,9 @@ export default function AssignmentEditor() {
           </div>
           <div className="col-md-9">
             <select id="wd-display-grade" className="form-select">
-              <option>Percentage</option>
+            <option value="Percentage">Percentage</option>
+            <option value="Absolute">Absolute</option>
+
             </select>
           </div>
         </div>
@@ -45,7 +47,8 @@ export default function AssignmentEditor() {
           </div>
           <div className="col-md-9 mb-3 border p-3 rounded">
             <select id="wd-submission-type" className="form-select">
-              <option>Online</option>
+            <option value="Online">Online</option>
+            <option value="Offline">Offline</option>
             </select>  
         <div>
           <label className="form-label">Online Entry Options</label>
