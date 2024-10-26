@@ -1,4 +1,5 @@
 export default function House() {
+  
     const house = {
       bedrooms: 4,
       bathrooms: 2.5,
@@ -12,6 +13,7 @@ export default function House() {
       },
       owners: ["Alice", "Bob"],
     };
+    console.log(house)
     return (
       <div id="wd-house">
         <h4>House</h4>
