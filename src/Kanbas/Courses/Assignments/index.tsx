@@ -5,8 +5,9 @@ import { FaPlus, FaSearch } from "react-icons/fa";
 import LessonControlButtons from "../Modules/LessonControlButtons";
 import * as db from "../../Database";
 import { useParams } from "react-router";
-
+import { useNavigate } from "react-router";
 export default function Assignments() {
+  const navigate = useNavigate();
   const { cid } = useParams(); // Extract course ID from URL parameters
   const assignments = db.assignments; // Fetch assignments from database
 
@@ -43,6 +44,7 @@ export default function Assignments() {
           <button
             id="wd-assignment-btn"
             className="btn btn-lg btn-danger me-1 float-end"
+            onClick={() => navigate(`/Kanbas/Courses/${cid}/Assignments/new`)}
           >
             <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
             ASSIGNMENTS

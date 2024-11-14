@@ -3,6 +3,7 @@ import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
+import AssignmentNew from "./Assignments/AssignmentNew";
 import { Navigate,Routes,Route, useParams, useLocation } from "react-router";
 import { FaAlignJustify } from "react-icons/fa";
 import PeopleTable from "./People/Table";
@@ -30,6 +31,7 @@ export default function Courses({ courses }: { courses: any[]; }) {
               <Route path="Modules" element={<Modules/>} />
               <Route path="Assignments" element={<h2><Assignments/></h2>} />
               <Route path="Assignments/:aid" element={<h2><AssignmentEditor/></h2>} />
+              <Route path="Assignments/new" element={<h2><AssignmentNew/></h2>} />
               <Route path="People" element={<PeopleTable />} />
             </Routes>
             </div></div>
