@@ -4,13 +4,13 @@ const initialState = {
   assignments: assignments,
 };
 const assignmentsSlice = createSlice({
-  name: "aasignments",
+  name: "assignments",
   initialState,
   reducers: {
     addAssignment: (state, { payload: assignment }) => {
       const newAssignment: any = {
         _id: new Date().getTime().toString(),
-        name: assignment.title,
+        title: assignment.title,
         course: assignment.course,
       };
       state.assignments = [...state.assignments, newAssignment] as any;

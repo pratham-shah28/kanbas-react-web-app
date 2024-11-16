@@ -1,15 +1,26 @@
 import "./index.css";
 import { BsFileText, BsGripVertical } from "react-icons/bs";
 import { IoEllipsisVertical } from "react-icons/io5";
-import { FaPlus, FaSearch } from "react-icons/fa";
+import { FaPlus, FaSearch, FaTrash } from "react-icons/fa";
 import LessonControlButtons from "../Modules/LessonControlButtons";
-import * as db from "../../Database";
+// import * as db from "../../Database";
 import { useParams } from "react-router";
 import { useNavigate } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteAssignment } from "./reducer";
+
 export default function Assignments() {
   const navigate = useNavigate();
   const { cid } = useParams(); // Extract course ID from URL parameters
-  const assignments = db.assignments; // Fetch assignments from database
+  const dispatch = useDispatch();
+
+  const { assignments } = useSelector((state: any) => state.assignmentsReducer);
+
+  const handleDelete = (assignmentId: string) => {
+    if (window.confirm("Sure you want to remove this assignment?")) {
+      dispatch(deleteAssignment(assignmentId));
+    }
+  };
 
   return (
     <div id="wd-assignments" className="container mt-4">
@@ -67,8 +78,8 @@ export default function Assignments() {
 
             <ul className="wd-lessons list-group rounded-0">
               {assignments
-                .filter((assignment) => assignment.course === cid)
-                .map((assignment) => (
+                .filter((assignment: any) => assignment.course === cid)
+                .map((assignment: any) => (
                   <li
                     key={assignment._id}
                     className="wd-lesson list-group-item p-3 ps-1 d-flex align-items-center border-green"
@@ -87,6 +98,7 @@ export default function Assignments() {
                       Not available until May 23 at 12:00am |
                       <br /> Due March 28 at 11:59pm | 100 pts
                     </div>
+                    <FaTrash className="text-danger me-2 mb-1" onClick={() => handleDelete(assignment._id)}/>
                     <LessonControlButtons />
                   </li>
                 ))}
