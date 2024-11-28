@@ -5,14 +5,15 @@ import { updateAssignment } from "./reducer";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import * as assignmentsClient from "./client";
 
 export default function AssignmentEditor() {
-  const { cid , aid } = useParams();
+  const { cid, aid } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
-  const assignments = useSelector((state :any) =>
-    state.assignmentsReducer.assignments.find((a :any) => a._id === aid)
+
+  const assignments = useSelector((state: any) =>
+    state.assignmentsReducer.assignments.find((a: any) => a._id === aid)
   );
 
   const [assignmentName, setAssignmentName] = useState(assignments.title);
@@ -20,14 +21,22 @@ export default function AssignmentEditor() {
   const [points, setPoints] = useState(assignments.points);
   const [dueDate, setDueDate] = useState(assignments.dueDate);
   const [availableFrom, setAvailableFrom] = useState(assignments.availableFrom);
-  const [availableUntil, setAvailableUntil] = useState(assignments.availableUntil);
+  const [availableUntil, setAvailableUntil] = useState(
+    assignments.availableUntil
+  );
 
   if (!assignments) {
     return <div>Assignment not found</div>;
   }
 
-  const handleSave = () => {
-    if (!assignmentName || !description || !dueDate || !availableFrom || !availableUntil) {
+  const handleSave = async (assignment: any) => {
+    if (
+      !assignmentName ||
+      !description ||
+      !dueDate ||
+      !availableFrom ||
+      !availableUntil
+    ) {
       alert("All fields must be filled out.");
       return;
     }
@@ -37,7 +46,7 @@ export default function AssignmentEditor() {
       return;
     }
 
-    if (new Date(dueDate) >= new Date(availableUntil)) {
+    if (new Date(dueDate) > new Date(availableUntil)) {
       alert("Due date must be before available until date.");
       return;
     }
@@ -46,20 +55,10 @@ export default function AssignmentEditor() {
       alert("Available from date must be before available until date.");
       return;
     }
-
-    dispatch(
-      updateAssignment({
-        _id: aid,
-        title: assignmentName,
-        description,
-        points,
-        dueDate,
-        availableFrom,
-        availableUntil,
-        course: cid, 
-      })
-    );
-    navigate(`/Kanbas/Courses/${cid}/Assignments`); 
+    if (!cid) return;
+    await assignmentsClient.updateAssignment(assignment);
+    dispatch(updateAssignment(assignment));
+    navigate(`/Kanbas/Courses/${cid}/Assignments`);
   };
 
   return (
@@ -258,7 +257,15 @@ export default function AssignmentEditor() {
             <button
               type="button"
               className="btn btn-danger"
-              onClick={handleSave}
+              onClick={() => handleSave({
+                _id: aid,
+                title: assignmentName,
+                description,
+                points,
+                dueDate,
+                availableFrom,
+                availableUntil
+              })}
             >
               Save
             </button>
