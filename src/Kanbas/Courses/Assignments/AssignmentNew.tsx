@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-
+import * as coursesClient from "../client";
 import { addAssignment } from "./reducer";
 
-export default function AssignmentNew() {
+export default function NewAssignment() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { cid } = useParams();
-
   const [assignmentName, setAssignmentName] = useState("");
   const [description, setDescription] = useState("");
   const [points, setPoints] = useState(100);
@@ -16,8 +15,14 @@ export default function AssignmentNew() {
   const [availableFrom, setAvailableFrom] = useState("");
   const [availableUntil, setAvailableUntil] = useState("");
 
-  const handleSave = () => {
-    if (!assignmentName || !description || !dueDate || !availableFrom || !availableUntil) {
+  const createAssignment = async () => {
+    if (
+      !assignmentName ||
+      !description ||
+      !dueDate ||
+      !availableFrom ||
+      !availableUntil
+    ) {
       alert("All fields must be filled out.");
       return;
     }
@@ -36,19 +41,19 @@ export default function AssignmentNew() {
       alert("Available from date must be before available until date.");
       return;
     }
-
-    dispatch(
-      addAssignment({
-        title: assignmentName,
-        description,
-        points,
-        dueDate,
-        availableFrom,
-        availableUntil,
-        course: cid, 
-      })
-    );
-    navigate(`/Kanbas/Courses/${cid}/Assignments`); 
+    if (!cid) return;
+    const newAssignment = {
+      title: assignmentName,
+      description,
+      points,
+      dueDate,
+      availableFrom,
+      availableUntil,
+      course: cid,
+    };
+    const assignment = await coursesClient.createAssignment(cid, newAssignment);
+    dispatch(addAssignment(assignment));
+    navigate(`/Kanbas/Courses/${cid}/Assignments`);
   };
 
   return (
@@ -157,7 +162,7 @@ export default function AssignmentNew() {
           <button
             type="button"
             className="btn btn-danger"
-            onClick={handleSave}
+            onClick={createAssignment}
           >
             Save
           </button>

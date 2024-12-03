@@ -14,3 +14,11 @@ export const updateAssignment = async (assignment: any) => {
   return data;
 };
 
+
+export const newAssignment = async (assignment: any) => {
+  const {data} = await axios.post(
+    `${ASSIGNMENTS_API}/${assignment._id}`,
+    assignment
+  );
+  return data;
+};
