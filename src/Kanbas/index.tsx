@@ -13,6 +13,8 @@ import Session from "./Account/Session";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
+
+
 export default function Kanbas() {
   
 
@@ -20,14 +22,24 @@ export default function Kanbas() {
   const { currentUser } = useSelector((state: any) => state.accountReducer);
 
 
+  // const fetchCourses = async () => {
+  //   try {
+  //     const courses = await userClient.findMyCourses();
+  //     setCourses(courses);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+  // commented during a6 
   const fetchCourses = async () => {
     try {
-      const courses = await userClient.findMyCourses();
+      const courses = await courseClient.fetchAllCourses();
       setCourses(courses);
     } catch (error) {
       console.error(error);
     }
   };
+ 
   useEffect(() => {
     fetchCourses();
   }, [currentUser]);
@@ -35,7 +47,7 @@ export default function Kanbas() {
 
 
   const addNewCourse = async () => {
-    const newCourse = await userClient.createCourse(course);
+    const newCourse = await courseClient.createCourse(course);
     setCourses([ ...courses, newCourse ]);
   };
 
