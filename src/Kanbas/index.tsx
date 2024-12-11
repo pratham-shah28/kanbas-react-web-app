@@ -18,13 +18,14 @@ import { useEffect } from "react";
 
 export default function Kanbas() {
   
-
   const [courses, setCourses] = useState<any[]>([]);
   const { currentUser } = useSelector((state: any) => state.accountReducer);
   const [enrolling, setEnrolling] = useState<boolean>(false);
   const findCoursesForUser = async () => {
     try {
+      console.log("Fetching courses for user bkl:", currentUser._id);
       const courses = await userClient.findCoursesForUser(currentUser._id);
+      console.log("Fetched courses bkl:", courses);
       setCourses(courses);
     } catch (error) {
       console.error(error);
@@ -50,16 +51,6 @@ export default function Kanbas() {
   };
  
 
-  // const fetchCourses = async () => {
-  //   try {
-  //     const courses = await userClient.findMyCourses();
-  //     setCourses(courses);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-  // commented during a6 
- 
  
   useEffect(() => {
     if (enrolling) {
@@ -113,24 +104,7 @@ export default function Kanbas() {
     _id: "1234", name: "New Course", number: "New Number",
     startDate: "2023-09-10", endDate: "2023-12-15", description: "New Description",
   });
-  // const addNewCourse = () => {
-  //   setCourses([...courses, { ...course, _id: new Date().getTime().toString() }]);
-  // };
-  // const deleteCourse = (courseId: any) => {
-  //   setCourses(courses.filter((course) => course._id !== courseId));
-  // };
-  // const updateCourse = () => {
-  //   setCourses(
-  //     courses.map((c) => {
-  //       if (c._id === course._id) {
-  //         return course;
-  //       } else {
-  //         return c;
-  //       }
-  //     })
-  //   );
-  // };
-
+  
   return (
     <Session>
     <div id="wd-kanbas">
