@@ -46,10 +46,7 @@ export default function Modules() {
     return (
       <div>
   <ModulesControls moduleName={moduleName} setModuleName={setModuleName}
-        addModule={() => {
-          dispatch(addModule({ name: moduleName, course: cid }));
-          setModuleName("");
-        }} />
+        addModule={createModuleForCourse} />
   <br /><br /><br /><br />
   <ul id="wd-modules" className="list-group rounded-0">
   {modules
