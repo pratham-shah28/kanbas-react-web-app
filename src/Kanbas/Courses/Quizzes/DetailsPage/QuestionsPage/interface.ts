@@ -1,0 +1,76 @@
+export interface Question {
+    _id: string;
+    type: QuestionType;
+    title: string;
+    points: number;
+    question: string;
+    blank?: string[];
+    choices?: Choice[];
+    true_or_false?: boolean;
+  }
+
+  export interface Quiz {
+    _id: string;
+    title: string;
+    quizType: string;
+    points: number;
+    assignmentGroup: string;
+    shuffleAnswers: boolean;
+    timeLimit: number;
+    multipleAttempts: boolean;
+    attemptLimit: number;
+    showCorrectAnswers: ShowAnswerType;
+    accessCode: string;
+    oneQuestionAtATime: boolean;
+    webcamRequired: boolean;
+    lockQuestionsAfterAnswering: boolean;
+    dueDate: string;
+    availableDate: string;
+    availableUntilDate: string;
+    description: string;
+    lastModified: string;
+    course: string;
+    published: boolean;
+  }
+  
+  export enum QuestionType {
+    trueOrFalse = "TRUE_OR_FALSE",
+    multipleChoice = "MULTIPLE_CHOICE",
+    fillInBlank = "FILL_IN_BLANK",
+  }
+  
+  export enum ShowAnswerType {
+    after_due_date = "after_due_date",
+    immediately = "immediately",
+    never = "never",
+  }
+  export interface Choice {
+    _id: string;
+    choice: string;
+    correct: boolean;
+  }
+
+  export interface Answers {
+    _id: string;
+    user: string;
+    quiz: string;
+    score: number;
+    total: number;
+    answers: Answer[];
+    submit_time: string;
+    time_used: number;
+  }
+  
+  export interface Questions {
+    _id: string;
+    quiz: string;
+    questions: Question[];
+  }
+  
+  export interface Answer {
+    type: QuestionType;
+    score: number;
+    true_or_false?: boolean;
+    choice?: number;
+    blank?: string;
+  }

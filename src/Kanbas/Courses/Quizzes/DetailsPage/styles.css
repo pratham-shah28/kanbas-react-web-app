@@ -1,0 +1,39 @@
+.quiz-title{
+    color: #333333;
+    font-size: 30px;
+    font-weight: bold; 
+}
+
+.quiz-item{
+    text-align: right;
+    color: #222222;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.quiz-item-value{
+    color: #333333;
+    font-size: 18px;
+}
+
+.large-margin-left {
+    margin-left: 200px;
+  }
+.align-right{
+    text-align: right;
+}
+
+.evenly-spaced {
+    width: 75%; /* Ensure it takes the full width of the container */
+}
+
+.quiz-item-dates,
+.quiz-item-value-dates {
+flex: 1;
+text-align: left;
+}
+
+.bold-text{
+    font-weight: bold;
+}
+
