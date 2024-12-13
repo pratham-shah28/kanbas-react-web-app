@@ -27,6 +27,8 @@ export function StudentRestricted({ children}: { children: any}) {
 
 export function FacultyAndAdminRestricted({ children}: { children: any}) {
   const { currentUser } = useSelector((state: any) => state.accountReducer);
+  console.log(currentUser.role)
+  console.log(currentUser.role)
   if (currentUser && currentUser.role === "ADMIN" || currentUser.role === "FACULTY") {
     return children;
   } else {
